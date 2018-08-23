@@ -1,0 +1,69 @@
+{
+    "name": "ccrovermusic",
+    "version": "1.0.0",
+    "description": "A website for CC Rover Music!",
+    "main": "index.php",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jstoobz/cc-rover-music.git"
+    },
+    "author": {
+        "name": "James Stephens",
+        "email": "stephensja7@gmail.com",
+        "url": "https://jstoobz.com"
+    },
+    "license": "UNLICENSED",
+    "bugs": {
+        "url": "https://github.com/jstoobz/cc-rover-music/issues",
+        "email": "stephensja7@gmail.com"
+    },
+    "private": true,
+    "homepage": "https://ccrovermusic.com",
+    "browserslist": [
+        "last 2 versions",
+        "> 1%",
+        "Firefox ESR"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+        "autoprefixer": "^8.6.0",
+        "babel-core": "^6.26.3",
+        "babel-preset-env": "^1.7.0",
+        "browser-sync": "^2.24.4",
+        "css-mqpacker": "^6.0.2",
+        "cssnano": "^3.10.0",
+        "del": "^3.0.0",
+        "gulp": "^3.9.1",
+        "gulp-babel": "^7.0.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-if": "^2.0.2",
+        "gulp-imagemin": "^4.1.0",
+        "gulp-jshint": "^2.1.0",
+        "gulp-line-ending-corrector": "^1.0.2",
+        "gulp-load-plugins": "^1.5.0",
+        "gulp-newer": "^1.4.0",
+        "gulp-notify": "^3.2.0",
+        "gulp-postcss": "^7.0.1",
+        "gulp-rename": "^1.2.3",
+        "gulp-rtlcss": "^1.2.0",
+        "gulp-sass": "^4.0.1",
+        "gulp-size": "^3.0.0",
+        "gulp-sort": "^2.0.0",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp-strip-debug": "^3.0.0",
+        "gulp-uglify": "^3.0.0",
+        "gulp-wp-pot": "^2.3.1",
+        "gulp-zip": "^4.1.0",
+        "jshint": "^2.9.5",
+        "jshint-stylish": "^2.2.1",
+        "postcss-assets": "^5.0.0",
+        "run-sequence": "^2.2.1"
+    },
+    "engines": {
+        "node": ">=9.6.1",
+        "npm": ">=5.6.0"
+    }
+}
