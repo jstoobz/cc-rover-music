@@ -1,0 +1,53 @@
+.site-header {
+    position: relative;
+
+    a {
+        color: $color__white!important;
+        text-decoration: none;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $color__gray!important;
+        }
+    }
+}
+
+.navbar {
+    height: 50px;
+    background-color: $color__black!important;
+}
+
+.navbar-brand {
+    margin: 0 1rem 0 0;
+}
+
+.navbar-toggler {
+    font-size: .875em;
+    border: none;
+    border-radius: 0;
+    color: $color__white!important;
+    line-height: .875;
+
+    .navbar-toggler-icon {
+        width: 1em;
+        height: 1em;
+        margin-right: 5px;
+    }
+
+    &:active,
+    &:focus {
+        color: $color__white!important;
+        outline: 1px none;
+    }
+
+    &:hover {
+        color: $color__gray!important;
+    }
+}
+
+#navbar-nav {
+    .active a {
+        color: $color__gray!important;
+    }
+}

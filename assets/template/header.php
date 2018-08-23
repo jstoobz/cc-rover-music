@@ -26,38 +26,37 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ccrovermusic' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" role="navigation">
-			<div class="container-fluid">
+		<!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" role="navigation"> -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
 
-	            <!-- Site title and branding in the menu -->
-	            <?php if ( ! has_custom_logo() ) { ?>
-	            	<?php if ( is_front_page() && is_home() ) : ?>
-						<h1 class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php endif; ?>
-				<?php } else {
-					the_custom_logo();
-				} ?><!-- End site title and branding -->
+            <!-- Site title and branding in the menu -->
+            <?php if ( ! has_custom_logo() ) { ?>
+            	<?php if ( is_front_page() && is_home() ) : ?>
+					<h1 class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php else : ?>
+					<p class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php endif; ?>
+			<?php } else {
+				the_custom_logo();
+			} ?><!-- End site title and branding -->
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
-	                <span class="navbar-toggler-icon"></span>
-	            </button>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fa fa-navicon"></i></span>MENU
+            </button>
 
-	            <?php wp_nav_menu(
-	            	array(
-		                'theme_location'    => 'primary',
-		                'depth'             => 2,
-		                'container'         => 'div',
-		                'container_class'   => 'collapse navbar-collapse',
-		                'container_id'      => 'navbar-nav',
-		                'menu_class'        => 'nav navbar-nav',
-		                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-		                'walker'            => new WP_Bootstrap_Navwalker(),
-		            )
-	            ); ?>
+            <?php wp_nav_menu(
+            	array(
+	                'theme_location'    => 'primary',
+	                'depth'             => 2,
+	                'container'         => 'div',
+	                'container_class'   => 'collapse navbar-collapse',
+	                'container_id'      => 'navbar-nav',
+	                'menu_class'        => 'nav navbar-nav ml-auto',
+	                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+	                'walker'            => new WP_Bootstrap_Navwalker(),
+	            )
+            ); ?>
 
-	        </div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
