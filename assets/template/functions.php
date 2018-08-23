@@ -44,7 +44,7 @@ if ( ! function_exists( 'ccrovermusic_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'ccrovermusic' ),
+			'primary' => esc_html__( 'Primary Menu', 'ccrovermusic' ),
 		) );
 
 		/*
@@ -120,11 +120,13 @@ add_action( 'widgets_init', 'ccrovermusic_widgets_init' );
  * Enqueue scripts and styles.
  */
 function ccrovermusic_scripts() {
+	wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' );
 	wp_enqueue_style( 'ccrovermusic-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'ccrovermusic-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'ccrovermusic-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js' );
+	wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' );
+	wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' );
+	wp_enqueue_script( 'bundled_js', get_template_directory_uri() . '/js/bundle.js', array(), '20180812', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -159,3 +161,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Bootstrap4 navwalker class
+ */
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';

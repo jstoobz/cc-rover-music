@@ -21,37 +21,43 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+
+<div class="site" id="page">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ccrovermusic' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$ccrovermusic_description = get_bloginfo( 'description', 'display' );
-			if ( $ccrovermusic_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $ccrovermusic_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" role="navigation">
+			<div class="container-fluid">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ccrovermusic' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
+	            <!-- Site title and branding in the menu -->
+	            <?php if ( ! has_custom_logo() ) { ?>
+	            	<?php if ( is_front_page() && is_home() ) : ?>
+						<h1 class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php endif; ?>
+				<?php } else {
+					the_custom_logo();
+				} ?><!-- End site title and branding -->
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+	                <span class="navbar-toggler-icon"></span>
+	            </button>
+
+	            <?php wp_nav_menu(
+	            	array(
+		                'theme_location'    => 'primary',
+		                'depth'             => 2,
+		                'container'         => 'div',
+		                'container_class'   => 'collapse navbar-collapse',
+		                'container_id'      => 'navbar-nav',
+		                'menu_class'        => 'nav navbar-nav',
+		                'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+		                'walker'            => new WP_Bootstrap_Navwalker(),
+		            )
+	            ); ?>
+
+	        </div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
