@@ -121,6 +121,7 @@ add_action( 'widgets_init', 'ccrovermusic_widgets_init' );
  */
 function ccrovermusic_scripts() {
 	wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' );
+	wp_enqueue_style( 'font-awesome', 'https:////maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'ccrovermusic-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js' );

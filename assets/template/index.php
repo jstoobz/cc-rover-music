@@ -51,6 +51,8 @@ get_header();
 		endif;
 		?>
 
+		<div style="height: 600px">TEST <i class="fa fa-camera-retro"></i></div>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

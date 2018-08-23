@@ -14,19 +14,33 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ccrovermusic' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'ccrovermusic' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'ccrovermusic' ), 'ccrovermusic', '<a href="https://jstoobz.com">James Stephens</a>' );
-				?>
-		</div><!-- .site-info -->
+		<div class="contaier">
+			<div clas=s"footer-brand">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			</div>
+			<div class="social-menu">
+                <ul>
+                    <li><a href="" title="Facebook" alt="Facebook" target="_blank"><i class="fa fa-facebook-square fa-lg" id="facebook"></i></a></li>
+                    <li><a href="" title="Instagram" alt="Instagram" target="_blank"><i class="fa fa-instagram fa-lg" id="instagram"></i></a></li>
+                    <li><a href="" title="Twitter" alt="Twitter" target="_blank"><i class="fa fa-twitter-square fa-lg" id="twitter"></i></a></li>
+                    <li><a href="" title="Youtube" alt="Youtube" target="_blank"><i class="fa fa-youtube-square fa-lg" id="youtube"></i></a></li>
+                    <li><a href="" title="Spotify" alt="Spotify" target="_blank"><i class="fa fa-spotify fa-lg" id="spotify"></i></a></li>
+                    <li><a href="" title="Sound Cloud" alt="Sound Cloud" target="_blank"><i class="fa fa-soundcloud fa-lg" id="sound-cloud"></i></a></li>
+                </ul>
+			</div>
+			<div class="copyright">
+				Copyright &copy; <?php echo date('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>.<br class="copyright-mobile-break"/> All Rights Reserved.
+			</div>
+			<div class="developer">
+				Site developed by: <a href="https://jstoobz.com" target="_blank">jstoobz</a>
+			</div>
+			<div class="extras">
+				<ul class="links">
+					<li><a href="">Privacy Policy</a></li>
+					<li><a href="">Terms &amp; Conditions</a></li>
+				</ul>
+			</div>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
