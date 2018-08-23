@@ -1,7 +1,7 @@
 === CC Rover Music ===
 
-Requires at least: 4.9.4
-Tested up to: 4.9.4
+Requires at least: 4.9.8
+Tested up to: 4.9.8
 Stable tag: 1.0.0
 
 == Description ==
