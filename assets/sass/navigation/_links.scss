@@ -4,16 +4,19 @@ a {
 	&:visited {
 		color: $color__link-visited;
 	}
-	&:hover,
+
+	&:active,
 	&:focus,
-	&:active {
+	&:hover {
 		color: $color__link-hover;
 	}
+
 	&:focus {
 		outline: thin dotted;
 	}
-	&:hover,
-	&:active {
+
+	&:active,
+	&:hover {
 		outline: 0;
 	}
 }

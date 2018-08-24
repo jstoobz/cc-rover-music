@@ -4,7 +4,7 @@
     color: $color__white;
     background-color: $color__black;
     text-align: center;
-    font-size: .875em;
+    font-size: .875rem;
     line-height: 1.5;
 
     a {
@@ -67,11 +67,11 @@
             padding: 0 .25em;
 
             a {
-                font-size: .625em;
+                font-size: .625rem;
                 border-bottom: 1px dotted $color__gray;
 
-                &:hover,
-                &:focus {
+                &:focus,
+                &:hover {
                     border-bottom: 1px dotted $color__white;
                     text-decoration: none;
                 }

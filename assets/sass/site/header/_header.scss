@@ -5,25 +5,25 @@
         color: $color__white!important;
         text-decoration: none;
 
-        &:hover,
         &:active,
-        &:focus {
+        &:focus,
+        &:hover {
             color: $color__gray!important;
         }
     }
 }
 
 .navbar {
-    height: 50px;
+    padding: .2em 1em;
     background-color: $color__black!important;
 }
 
 .navbar-brand {
-    margin: 0 1rem 0 0;
+    margin: 0 1em 0 0;
 }
 
 .navbar-toggler {
-    font-size: .875em;
+    font-size: .875rem;
     border: none;
     border-radius: 0;
     color: $color__white!important;

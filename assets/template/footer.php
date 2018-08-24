@@ -34,7 +34,7 @@
 			Site developed by: <a href="https://jstoobz.com" target="_blank">jstoobz</a>
 		</div>
 		<div class="extras">
-			<ul class="links">
+			<ul>
 				<li><a href="">Privacy Policy</a></li>
 				<li><a href="">Terms &amp; Conditions</a></li>
 			</ul>
