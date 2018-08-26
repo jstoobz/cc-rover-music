@@ -24,16 +24,35 @@
 .social-menu {
     margin-bottom: 3px;
 
-    ul {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+    a {
+        padding: .5em;
 
-        a {
-            padding: .5em;
+        &.facebook:hover {
+            color: #3B5998;
+        }
+
+        &.instagram:hover {
+            color: #FBAD50;
+        }
+
+        &.twitter:hover {
+            color: #55ACEE;
+        }
+
+        &.youtube:hover {
+            color: #FF0000;
+        }
+
+        &.apple:hover {
+            color: #999999;
+        }
+
+        &.spotify:hover {
+            color: #84BD00;
+        }
+
+        &.sound-cloud:hover {
+            color: #FF7700;
         }
     }
 }
@@ -55,27 +74,15 @@
 }
 
 .extras {
-    ul {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+    a {
+        padding: 0 .25em;
+        font-size: .625rem;
+        border-bottom: 1px dotted $color__gray;
 
-        li {
-            padding: 0 .25em;
-
-            a {
-                font-size: .625rem;
-                border-bottom: 1px dotted $color__gray;
-
-                &:focus,
-                &:hover {
-                    border-bottom: 1px dotted $color__white;
-                    text-decoration: none;
-                }
-            }
+        &:focus,
+        &:hover {
+            border-bottom: 1px dotted $color__white;
+            text-decoration: none;
         }
     }
 }

@@ -1,3 +1,11 @@
 .site-content {
-    padding: 1em;
+    padding: 2em 1em;
+    max-width: 1140px;
+    margin: auto;
+}
+
+a {
+    &:hover {
+        transition: 0.45s;
+    }
 }
