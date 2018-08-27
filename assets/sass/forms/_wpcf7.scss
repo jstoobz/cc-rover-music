@@ -1,0 +1,73 @@
+.wpcf7 {
+
+    form {
+        max-width: 390px;
+        padding: 1em 1em 0 1em;
+        font-size: 1.125rem;
+        border: 2px solid $color__black;
+        border-radius: 20px;
+        background-color: $color__gray-light;
+
+        @media (max-width: 1091px) {
+            max-width: 100%;
+        }
+    }
+
+    p {
+        margin-bottom: .5em;
+    }
+
+    label {
+        margin-bottom: 0;
+        font-weight: 700;
+    }
+
+    .required {
+        color: red;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 0 5px;
+        height: 150px;
+        font-size: .875rem;
+        font-family: $font__main;
+        color: $color__black;
+        border-radius: 4px;
+
+        @media (max-width: 1091px) {
+            width: 100%;
+        }
+    }
+
+    input {
+        width: 100%;
+        padding: 0 5px;
+        font-size: .875rem;
+        font-family: $font__main;
+        color: $color__black;
+        border-radius: 4px;
+
+        @media (max-width: 1091px) {
+            width: 100%;
+        }
+    }
+
+    input[type="submit"] {
+        padding: .5em 2em;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: $color__white;
+        border: 1px solid $color__black;
+
+        &:hover {
+            color: $color__white;
+            background-color: $color__blue-hover;
+            transition: 0.45s;
+        }
+    }
+
+    .wpcf7-response-output {
+        margin-top: 0;
+    }
+}
