@@ -43,11 +43,15 @@
 
     &:hover {
         color: $color__gray!important;
-        transition: ease 0.35s;
+        transition: ease 0.45s;
     }
 }
 
 #navbar-nav {
+    a {
+        font-size: 1rem;
+    }
+
     .active a {
         color: $color__gray!important;
     }

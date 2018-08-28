@@ -167,3 +167,13 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Bootstrap4 navwalker class
  */
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
+/**
+ * Load SVG icon functions.
+ */
+require get_template_directory() . '/inc/icon-functions.php';
+
+
+add_filter( 'excerpt_length', function($length) {
+    return 20;
+} );
