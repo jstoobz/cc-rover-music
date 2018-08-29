@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Blog Page
+ * Template Name: News Page
  *
  * @package CC_Rover_Music
  */
@@ -12,7 +12,7 @@ get_header();
     <div id="primary" class="content-area">
         <main id="main" class="site-main">
 
-        <?php query_posts('post_type=post&cat=3&post_status=publish&posts_per_page=5&paged='. get_query_var('paged')); ?>
+        <?php query_posts('post_type=post&cat=4&post_status=publish&posts_per_page=5&paged='. get_query_var('paged')); ?>
 
         <?php
             while ( have_posts() ) : the_post();
