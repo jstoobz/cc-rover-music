@@ -2,6 +2,8 @@
 
 /**
  * Template Name: Blog Page
+ *
+ * @package CC_Rover_Music
  */
 
 get_header();
@@ -36,7 +38,13 @@ get_header();
 
             endwhile;
 
-            the_posts_navigation();
+            // the_posts_navigation();
+            // the_posts_pagination( array(
+            the_posts_pagination( array(
+                'prev_text' => ccrovermusic_get_svg( array( 'icon' => 'arrow-long-left', 'fallback' => true ) ) . __( 'Newer', 'ccrovermusic' ),
+                'next_text' => __( 'Older', 'ccrovermusic' ) . ccrovermusic_get_svg( array( 'icon' => 'arrow-long-right' , 'fallback' => true ) ),
+                'before_page_number' => '<span class="screen-reader-text">' . __( 'Page ', 'ccrovermusic' ) . '</span>',
+            ));
 
         else :
 

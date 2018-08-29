@@ -74,10 +74,9 @@ if ( ! function_exists( 'ccrovermusic_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 50,
+			'width'       => 150,
 			'flex-width'  => true,
-			'flex-height' => true,
 		) );
 	}
 endif;
@@ -124,6 +123,7 @@ function ccrovermusic_scripts() {
 	wp_enqueue_style( 'font-awesome', 'https:////maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	wp_enqueue_style( 'ccrovermusic-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Quicksand:500,700' );
+	wp_enqueue_style( 'google-fonts-main', '//fonts.googleapis.com/css?family=Open+Sans:400,600' );
 
 	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js' );
 	wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' );
@@ -172,8 +172,3 @@ require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
  * Load SVG icon functions.
  */
 require get_template_directory() . '/inc/icon-functions.php';
-
-
-add_filter( 'excerpt_length', function($length) {
-    return 20;
-} );

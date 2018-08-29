@@ -146,3 +146,33 @@ if ( ! function_exists( 'ccrovermusic_post_thumbnail' ) ) :
 		endif; // End is_singular().
 	}
 endif;
+
+/**
+ * Post navigation (previous / next post) for single posts.
+ */
+function ccrovermusic_post_navigation() {
+	the_post_navigation( array(
+		'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'ccrovermusic' ) . '</span> ' .
+			'<span class="screen-reader-text">' . __( 'Next post:', 'ccrovermusic' ) . '</span> ' .
+			'<span class="post-title">%title</span>',
+		'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'ccrovermusic' ) . '</span> ' .
+			'<span class="screen-reader-text">' . __( 'Previous post:', 'ccrovermusic' ) . '</span> ' .
+			'<span class="post-title">%title</span>',
+	) );
+}
+
+/**
+ * Customize ellipsis at end of excerpts.
+ */
+function ccrovermusic_excerpt_more( $more ) {
+	return "…";
+}
+add_filter( 'excerpt_more', 'ccrovermusic_excerpt_more' );
+
+/**
+ * Filter excerpt length to 100 words.
+ */
+function ccrovermusic_excerpt_length( $length ) {
+	return 100;
+}
+add_filter( 'excerpt_length', 'ccrovermusic_excerpt_length');

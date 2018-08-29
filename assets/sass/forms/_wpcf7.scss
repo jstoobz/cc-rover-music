@@ -3,6 +3,7 @@
     form {
         max-width: 390px;
         padding: 1em 1em 0 1em;
+        font-family: $font__quicksand;
         border: 2px solid $color__black;
         border-radius: 20px;
         background-color: $color__gray-light;
@@ -54,7 +55,7 @@
 
     input[type="submit"] {
         padding: .5em 2em;
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: 500;
         background-color: $color__white;
         border: 1px solid $color__black;

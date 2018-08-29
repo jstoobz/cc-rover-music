@@ -2,6 +2,8 @@
 
 /**
  * Template Name: Contact Page
+ *
+ * @package CC_Rover_Music
  */
 
 get_header();

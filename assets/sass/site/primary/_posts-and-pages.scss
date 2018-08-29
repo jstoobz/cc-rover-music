@@ -13,12 +13,20 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 1.5em 0;
+}
+
+.entry-content {
+    padding-bottom: 2.5em;
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.entry-footer {
+    margin: 1.5em 0;
 }
 
 .about {
