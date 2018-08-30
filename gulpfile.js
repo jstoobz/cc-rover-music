@@ -1,134 +1,131 @@
-const gulp = require('gulp'),
-    gulpLoadPlugins = require('gulp-load-plugins'),
-    plugins = gulpLoadPlugins({
-        pattern: ['gulp-*', 'gulp.*', 'autoprefixer', 'browser-sync', 'cssnano', 'css-mqpacker', 'del', 'postcss-assets', 'run-sequence']
-    });
+const gulp = require('gulp');
+const gulpLoadPlugins = require('gulp-load-plugins');
+const plugins = gulpLoadPlugins({
+    pattern: ['gulp-*', 'gulp.*', 'autoprefixer', 'browser-sync', 'cssnano', 'css-mqpacker', 'del', 'fs', 'postcss-assets', 'run-sequence']
+});
 
-const themeName = 'ccrovermusic',
-    themePackage = 'CC Rover Music',
-    themeURL = 'ccrovermusic.local';
+const themeName = 'ccrovermusic';
+const themePackage = 'CC Rover Music';
+const themeURL = 'ccrovermusic.local';
 
-let env,
-    dir,
-    php,
-    images,
-    sass,
-    sassStyle,
-    js,
-    readMe,
-    languages,
-    bsync,
-    lineec;
+let sassStyle;
 
-env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'development';
 
-dir = {
+const dir = {
     src: 'assets/',
     build: '../2.\ Development/' + themeName + '/wp-content/themes/' + themeName + '/',
     prod: '../1.\ Production/' + themePackage + '/' + themeName + '/',
-    prodZip: '../1.\ Production/' + themePackage + '/'
+    prodZip: '../1.\ Production/' + themePackage + '/',
 };
 
-php = {
-    src:    dir.src + 'template/**/*.php',
-    build:  dir.build,
-    prod:   dir.prod
+const php = {
+    src: dir.src + 'template/**/*.php',
+    build: dir.build,
+    prod: dir.prod,
 };
 
-images = {
-    src:    dir.src + 'images/**/*.{jpg,JPG,png}',
-    build:  dir.build,
-    prod:   dir.prod,
+const images = {
+    src: dir.src + 'images/**/*.{jpg,JPG,png}',
+    build: dir.build,
+    prod: dir.prod,
     imagesOpts: [
         plugins.imagemin.gifsicle({interlaced: true}),
         plugins.imagemin.jpegtran({progressive: true}),
         plugins.imagemin.optipng({optimizationLevel: 5}),
         plugins.imagemin.svgo({plugins:[{removeViewBox: true}]})
-    ]
+    ],
 };
 
-sass = {
-    src:    dir.src + 'sass/style.scss',
-    watch:  dir.src + 'sass/**/*',
-    build:  dir.build,
-    prod:   dir.prod,
+const sass = {
+    src: dir.src + 'sass/style.scss',
+    watch: dir.src + 'sass/**/*',
+    build: dir.build,
+    prod: dir.prod,
     sassOpts: {
         outputStyle: sassStyle,
         imagePath: images.build,
         indentType: 'tab',
         indentWidth: '1',
         precision: 10,
-        errLogToConsole: true
+        errLogToConsole: true,
     },
     postcssOpts: [
         plugins.postcssAssets({
             loadPaths: [images.build],
             basePath: dir.build,
-            baseUrl: '/wp-content/themes/' + themeName + '/'
+            baseUrl: '/wp-content/themes/' + themeName + '/',
         }),
         plugins.autoprefixer()
     ],
     rtl: {
-        basename: 'rtl'
+        basename: 'rtl',
     }
 };
 
-js = {
-    src:    dir.src + 'js/**/*.js',
-    build:  dir.build + 'js',
-    prod:   dir.prod + 'js',
+const js = {
+    src: dir.src + 'js/**/*.js',
+    build: dir.build + 'js',
+    prod: dir.prod + 'js',
     filename: 'bundle.js',
     suffix: {
-        suffix: '.min'
+        suffix: '.min',
     }
 };
 
-readMe = {
-    src:    dir.src + 'README.md',
-    build:   dir.build,
-    prod:   dir.prod
+const readMe = {
+    src: dir.src + 'README.md',
+    build: dir.build,
+    prod: dir.prod,
 };
 
-bsync = {
+const languages = {
+    src: php.src,
+    build: dir.build + 'languages/',
+    prod: dir.prod + 'languages/',
+    languagesOpts: {
+        domain: themeName,
+        destFile: themeName + '.pot',
+        package: themePackage,
+        bugReport: 'https://jstoobz.com/contact/',
+        lastTranslator: 'James Stephens <james@jstoobz.com>',
+        team: 'James Stephens <james@jstoobz.com>',
+    },
+};
+
+const favicon = {
+    src: dir.src + 'favicon/favicon.png',
+    build: dir.build + 'images/favicon/',
+    prod: dir.prod + 'images/favicon/',
+    FAVICON_DATA_FILE: dir.src + '/favicon/faviconData.json',
+};
+
+const bsync = {
     bsyncOpts: {
         proxy: 'http://' + themeURL + '/',
-        host:  themeURL,
+        host: themeURL,
         files: dir.build + '**/*',
         open: 'external',
         notify: false,
         injectChanges: true,
         watchOptions: {
-            debounceDelay: 2000
+            debounceDelay: 2000,
         },
         ui: {
-            port: 8001
+            port: 8001,
         },
         snippetOptions: {
             whitelist: ['/wp-admin/admin-ajax.php'],
-            blacklist: ['wp-admin/**']
+            blacklist: ['wp-admin/**'],
         }
     }
 };
 
-languages = {
-    languagesOpts: {
-        domain:         themeName,
-        destFile:       themeName + '.pot',
-        package:        themePackage,
-        bugReport:      'https://jstoobz.com/contact/',
-        lastTranslator: 'James Stephens <james@jstoobz.com>',
-        team:           'James Stephens <james@jstoobz.com>'
-    },
-    src:    php.src,
-    build:  dir.build + 'languages/',
-    prod:   dir.prod + 'languages/'
-};
-
-lineec = {
+const lineec = {
     lineecOpts: {
         verbose: true,
         eolc: 'LF',
-        encoding: 'utf8'
+        encoding: 'utf8',
     }
 };
 
@@ -225,6 +222,81 @@ gulp.task('translate', () => {
         .pipe(plugins.notify({onLast: true, message: () => `wp pot translation compiled! ${s.prettySize}`}))
 });
 
+gulp.task('generate-favicon', () => {
+    // const s = plugins.size();
+    // return gulp.src(php.src)
+    //     .pipe(s)
+    //     .pipe(plugins.notify({onLast: true, message: () => `favicon compiled! ${s.prettySize}`}))
+
+    plugins.realFavicon.generateFavicon({
+        masterPicture: favicon.src,
+        dest: favicon.build,
+        iconsPath: '/favicon',
+        design: {
+            ios: {
+                pictureAspect: 'noChange',
+                assets: {
+                    ios6AndPriorIcons: false,
+                    ios7AndLaterIcons: false,
+                    precomposedIcons: false,
+                    declareOnlyDefaultIcon: true
+                }
+            },
+            desktopBrowser: {},
+            windows: {
+                pictureAspect: 'noChange',
+                backgroundColor: '#000000',
+                onConflict: 'override',
+                assets: {
+                    windows80Ie10Tile: false,
+                    windows10Ie11EdgeTiles: {
+                        small: false,
+                        medium: true,
+                        big: false,
+                        rectangle: false
+                    }
+                }
+            },
+            androidChrome: {
+                pictureAspect: 'backgroundAndMargin',
+                margin: '17%',
+                backgroundColor: '#000000',
+                themeColor: '#000000',
+                manifest: {
+                    name: 'CC Rover Music',
+                    display: 'standalone',
+                    orientation: 'notSet',
+                    onConflict: 'override',
+                    declared: true
+                },
+                assets: {
+                    legacyIcon: false,
+                    lowResolutionIcons: false
+                }
+            },
+            safariPinnedTab: {
+                pictureAspect: 'silhouette',
+                themeColor: '#000000'
+            }
+        },
+        settings: {
+            scalingAlgorithm: 'Mitchell',
+            errorOnImageTooSmall: false,
+            readmeFile: false,
+            htmlCodeFile: false,
+            usePathAsIs: false
+        },
+        markupFile: favicon.FAVICON_DATA_FILE
+    });
+});
+
+gulp.task('check-for-favicon-update', (done) => {
+    let currentVersion = JSON.parse(plugins.fs.readFileSync(favicon.FAVICON_DATA_FILE)).version;
+    plugins.realFavicon.checkForUpdates(currentVersion, (err) => {
+        if (err) throw err;
+    });
+});
+
 gulp.task('browser-sync', () => {
     plugins.browserSync.init(bsync.bsyncOpts)
 });
@@ -234,6 +306,7 @@ gulp.task('watch', ['browser-sync'], () => {
     gulp.watch(images.src, ['images']);
     gulp.watch(sass.watch, ['sass']);
     gulp.watch(js.src, ['js']);
+    gulp.watch(favicon.src, ['generate-favicon']);
 });
 
 gulp.task('default', (cb) => {
@@ -244,13 +317,12 @@ gulp.task('default', (cb) => {
     )
 });
 
-gulp.task('build', ['php', 'sass', 'js', 'readme']);
+gulp.task('build', ['php', 'sass', 'js', 'readme', 'translate', 'generate-favicon']);
 
 gulp.task('build:dev', (cb) => {
     plugins.runSequence(
         'clean:dev',
         'build',
-        'translate',
         cb
     )
 });
@@ -263,7 +335,6 @@ gulp.task('build:prod', (cb) => {
     plugins.runSequence(
         'clean:prod',
         'build',
-        'translate',
         cb
     )
 });

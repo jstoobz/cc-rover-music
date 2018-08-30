@@ -19,7 +19,7 @@
 		</div>
 		<div class="social-menu">
             <a href="" title="Facebook" alt="Facebook" target="_blank" class="facebook"><i class="fa fa-facebook-square fa-lg" id="facebook"></i></a>
-            <a href="" title="Instagram" alt="Instagram" target="_blank" class="instagram"><i class="fa fa-instagram fa-lg" id="instagram"></i></a>
+            <a href="https://www.instagram.com/cc_rover/" title="Instagram" alt="Instagram" target="_blank" class="instagram"><i class="fa fa-instagram fa-lg" id="instagram"></i></a>
             <a href="https://twitter.com/cc_rover_music" title="Twitter" alt="Twitter" target="_blank" class="twitter"><i class="fa fa-twitter-square fa-lg" id="twitter"></i></a>
             <a href="https://www.youtube.com/channel/UCDDyamuDYMR3M_swqdo6lTg" title="Youtube" alt="Youtube" target="_blank" class="youtube"><i class="fa fa-youtube-square fa-lg" id="youtube"></i></a>
             <a href="https://itunes.apple.com/us/artist/cc-rover/1409781438" title="Apple" alt="Apple" target="_blank" class="apple"><i class="fa fa-apple fa-lg" id="apple"></i></a>
@@ -33,8 +33,8 @@
 			Site developed by: <a href="https://jstoobz.com" target="_blank">jstoobz</a>
 		</div>
 		<div class="extras">
-			<a href="">Privacy Policy</a>
-			<a href="">Terms &amp; Conditions</a>
+			<a href="/privacy-policy">Privacy Policy</a>
+            <a href="/sitemap">Sitemap</a>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

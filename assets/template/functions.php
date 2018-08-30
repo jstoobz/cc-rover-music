@@ -137,6 +137,32 @@ function ccrovermusic_scripts() {
 add_action( 'wp_enqueue_scripts', 'ccrovermusic_scripts' );
 
 /**
+ * Custom Post Type for Music
+ */
+function create_music_post_type() {
+    register_post_type( 'Music',
+        array(
+            'labels' => array(
+                'name' => __( 'Music' ),
+                'singular_name' => __( 'Music' )
+            ),
+            'public' => true,
+            'menu_icon' => 'dashicons-format-audio',
+            'rewrite' => array('slug' => 'music'),
+        )
+    );
+}
+add_action( 'init', 'create_music_post_type' );
+
+/**
+ * Extract Youtube ID
+ */
+function extractYoutubeID($url) {
+    $youtube_array = explode('?v=', $url);
+    return substr($youtube_array[1], 0, 11);
+}
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

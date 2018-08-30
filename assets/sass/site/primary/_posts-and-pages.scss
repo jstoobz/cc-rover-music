@@ -16,10 +16,6 @@
 	margin: 1.5em 0;
 }
 
-.entry-content {
-    padding-bottom: 2.5em;
-}
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -92,5 +88,22 @@
             color: $color__black;
             text-decoration: none;
         }
+    }
+}
+
+.music {
+    .music-post {
+        margin-bottom: 4em;
+        padding: 0 2em;
+
+        h2 {
+            text-align: center;
+        }
+    }
+}
+
+.sitemap {
+    ul {
+        margin-left: .5em;
     }
 }

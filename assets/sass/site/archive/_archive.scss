@@ -1,6 +1,10 @@
 .archive-view {
     background-color: $color__white;
 
+    .post {
+        padding: 1em;
+    }
+
     .post,
     .page {
         position: relative;

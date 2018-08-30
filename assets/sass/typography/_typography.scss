@@ -9,9 +9,9 @@ textarea {
 	@include font-size(1);
 	line-height: $font__line-height-body;
 
-    /*@media screen and (min-width: $query__small) {
-        @include font-size(1);
-    }*/
+    @media (max-width: $query__small) {
+        @include font-size(.8);
+    }
 }
 
 @import "headings";
