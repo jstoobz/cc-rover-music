@@ -148,6 +148,7 @@ function create_music_post_type() {
             ),
             'public' => true,
             'menu_icon' => 'dashicons-format-audio',
+            'has_archive' => false,
             'rewrite' => array('slug' => 'music'),
         )
     );

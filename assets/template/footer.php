@@ -15,6 +15,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="footer-brand">
+            <!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png"></a> -->
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 		</div>
 		<div class="social-menu">
