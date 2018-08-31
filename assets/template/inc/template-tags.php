@@ -27,8 +27,14 @@ if ( ! function_exists( 'ccrovermusic_posted_on' ) ) :
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
 			esc_html_x( 'Posted on %s', 'post date', 'ccrovermusic' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			$time_string
 		);
+
+		// $posted_on = sprintf(
+		// 	/* translators: %s: post date. */
+		// 	esc_html_x( 'Posted on %s', 'post date', 'ccrovermusic' ),
+		// 	'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		// );
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 

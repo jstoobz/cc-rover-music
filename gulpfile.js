@@ -26,7 +26,7 @@ const php = {
 };
 
 const images = {
-    src: dir.src + 'images/**/*.{jpg,JPG,png}',
+    src: dir.src + 'images/**/*.{jpg,JPG,png,svg}',
     build: dir.build,
     prod: dir.prod,
     imagesOpts: [

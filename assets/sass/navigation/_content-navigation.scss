@@ -92,7 +92,6 @@
 }
 
 .pagination {
-
     font-family: $font__quicksand;
 
     .nav-links {
@@ -113,7 +112,7 @@
         &:focus,
         &:hover {
             color: white;
-            background: $color__interactive;
+            background: $color__blue-hover;
         }
     }
 

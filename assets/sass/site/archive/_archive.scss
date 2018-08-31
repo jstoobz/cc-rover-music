@@ -110,6 +110,7 @@
     right: 0;
     bottom: 0;
     font-family: $font__quicksand;
+    border: 1px solid $color__black;
 
     a {
         display: block;
@@ -121,7 +122,7 @@
         &:focus,
         &:hover {
             color: white;
-            background: $color__interactive;
+            background: $color__blue-hover;
         }
     }
 
