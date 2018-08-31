@@ -45,6 +45,7 @@ function ccrovermusic_customize_register( $wp_customize ) {
 			'transport'			=> 'postMessage'
 		)
 	);
+
 	// Add the controls
 	$wp_customize->add_control(	'ccrovermusic_length_control',
 		array(
@@ -95,6 +96,6 @@ function ccrovermusic_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function ccrovermusic_customize_preview_js() {
-	wp_enqueue_script( 'ccrovermusic-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20180812', true );
+	wp_enqueue_script( 'ccrovermusic-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'ccrovermusic_customize_preview_js' );

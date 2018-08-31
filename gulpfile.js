@@ -156,7 +156,6 @@ gulp.task('images', () => {
         .pipe(s)
         .pipe(plugins.if(env === 'development', plugins.newer(images.build)))
         .pipe(plugins.if(env === 'development', gulp.dest(images.build)))
-        .pipe(plugins.if(env === 'production', plugins.newer(images.build))) // maybe remove?
         .pipe(plugins.if(env === 'production', plugins.imagemin(images.imagesOpts)))
         .pipe(plugins.if(env === 'production', gulp.dest(images.prod)))
         .pipe(plugins.browserSync.reload({stream: true}))
@@ -191,8 +190,8 @@ gulp.task('js', () => {
         .pipe(plugins.jshint())
         .pipe(plugins.jshint.reporter('jshint-stylish'))
         .pipe(plugins.babel({ presets: ['env'] }))
-        .pipe(plugins.concat(js.filename))
-        .pipe(plugins.if(env === 'production', plugins.rename(js.suffix)))
+        // .pipe(plugins.concat(js.filename)) // comment out?
+        // .pipe(plugins.if(env === 'production', plugins.rename(js.suffix)))
         .pipe(plugins.if(env === 'production', plugins.stripDebug()))
         .pipe(plugins.if(env === 'production', plugins.uglify()))
         .pipe(plugins.if(env === 'development', plugins.sourcemaps.write()))
