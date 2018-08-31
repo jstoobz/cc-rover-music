@@ -16,8 +16,7 @@ get_header();
                 <h1><?php the_field('page_title') ?></h1>
 
                 <div class="bio">
-                    <div class="bio-img" style="background-image: url(<?php the_field('profile_picture'); ?>);">
-                    </div>
+                    <div class="bio-img" style="background-image: url(<?php the_field('profile_picture'); ?>);"></div>
                     <div class="bio-text">
                         <h2><?php the_field('name'); ?></h2>
                         <h3><?php the_field('title'); ?></h3>

@@ -222,16 +222,11 @@ gulp.task('translate', () => {
         .pipe(plugins.notify({onLast: true, message: () => `wp pot translation compiled! ${s.prettySize}`}))
 });
 
-gulp.task('generate-favicon', () => {
-    // const s = plugins.size();
-    // return gulp.src(php.src)
-    //     .pipe(s)
-    //     .pipe(plugins.notify({onLast: true, message: () => `favicon compiled! ${s.prettySize}`}))
-
+gulp.task('generate-favicon', (done) => {
     plugins.realFavicon.generateFavicon({
         masterPicture: favicon.src,
         dest: favicon.build,
-        iconsPath: '/favicon',
+        iconsPath: favicon.build,
         design: {
             ios: {
                 pictureAspect: 'noChange',
@@ -263,7 +258,7 @@ gulp.task('generate-favicon', () => {
                 backgroundColor: '#000000',
                 themeColor: '#000000',
                 manifest: {
-                    name: 'CC Rover Music',
+                    name: themePackage,
                     display: 'standalone',
                     orientation: 'notSet',
                     onConflict: 'override',
@@ -287,6 +282,8 @@ gulp.task('generate-favicon', () => {
             usePathAsIs: false
         },
         markupFile: favicon.FAVICON_DATA_FILE
+    }, () => {
+        done();
     });
 });
 

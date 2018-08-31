@@ -33,7 +33,8 @@
 			Site developed by: <a href="https://jstoobz.com" target="_blank">jstoobz</a>
 		</div>
 		<div class="extras">
-			<a href="/privacy-policy">Privacy Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-and-conditions">Terms &amp; Conditions</a>
             <a href="/sitemap">Sitemap</a>
 		</div>
 	</footer><!-- #colophon -->

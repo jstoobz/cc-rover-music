@@ -17,9 +17,9 @@ get_header();
 
                 <div class="container">
                     <div class="contact-text col-lg-7">
-                        <h2><?php the_field('contact_title') ?></h2>
-                        <p><?php the_field('contact_description') ?></p>
-                        <h3>Contact Details:</h3>
+                        <h2><?php the_field('greeting_title') ?></h2>
+                        <p><?php the_field('greeting_message') ?></p>
+                        <h3><?php the_field('details_title') ?></h3>
                         <div class="contact-name">
                             <i class="fa fa-user fa-md"></i>
                             <?php the_field('contact_name') ?>
