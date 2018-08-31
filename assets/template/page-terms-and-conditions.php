@@ -15,7 +15,7 @@ get_header();
             <h1><?php the_field('page_title') ?></h1>
 
             <p>Last updated: August 30, 2018</p>
-            <p>Please read these Terms of Use ("Terms", "Terms of Use") carefully before using the <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">https:<?php bloginfo( 'url' ); ?></a> website (the "Service") operated by <?php echo get_bloginfo(); ?> ("us", "we", or "our").</p>
+            <p>Please read these Terms of Use ("Terms", "Terms of Use") carefully before using the <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'url' ); ?></a> website (the "Service") operated by <?php echo get_bloginfo(); ?> ("us", "we", or "our").</p>
             <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.</p>
             <p>By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.</p>
 

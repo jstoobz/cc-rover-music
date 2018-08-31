@@ -35,8 +35,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ccrovermusic' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<!-- <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" role="navigation"> -->
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation">
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" role="navigation">
 
             <!-- Site title and branding in the menu -->
             <?php if ( ! has_custom_logo() ) { ?>

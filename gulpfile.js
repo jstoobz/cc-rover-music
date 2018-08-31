@@ -156,6 +156,7 @@ gulp.task('images', () => {
         .pipe(s)
         .pipe(plugins.if(env === 'development', plugins.newer(images.build)))
         .pipe(plugins.if(env === 'development', gulp.dest(images.build)))
+        .pipe(plugins.if(env === 'production', plugins.newer(images.build))) // maybe remove?
         .pipe(plugins.if(env === 'production', plugins.imagemin(images.imagesOpts)))
         .pipe(plugins.if(env === 'production', gulp.dest(images.prod)))
         .pipe(plugins.browserSync.reload({stream: true}))
@@ -225,8 +226,8 @@ gulp.task('translate', () => {
 gulp.task('generate-favicon', (done) => {
     plugins.realFavicon.generateFavicon({
         masterPicture: favicon.src,
-        dest: favicon.build,
-        iconsPath: favicon.build,
+        dest: favicon.prod,
+        iconsPath: favicon.prod,
         design: {
             ios: {
                 pictureAspect: 'noChange',

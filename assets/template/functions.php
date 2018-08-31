@@ -128,7 +128,7 @@ function ccrovermusic_scripts() {
 	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js' );
 	wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' );
 	wp_enqueue_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' );
-	wp_enqueue_script( 'bundled_js', get_template_directory_uri() . '/js/bundle.js', array(), '20180812', true );
+	wp_enqueue_script( 'bundled_js', get_template_directory_uri() . '/js/bundle.js' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -162,6 +162,14 @@ function extractYoutubeID($url) {
     $youtube_array = explode('?v=', $url);
     return substr($youtube_array[1], 0, 11);
 }
+
+/**
+ * Generate Sitemap Page
+ */
+function wp_sitemap_page(){
+	return '<ul>'.wp_list_pages('title_li=&echo=0').'</ul>';
+}
+add_shortcode('sitemap', 'wp_sitemap_page');
 
 /**
  * Implement the Custom Header feature.

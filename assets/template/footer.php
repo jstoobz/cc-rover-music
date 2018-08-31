@@ -31,7 +31,7 @@
 			Copyright &copy; <?php echo date('Y'); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>.<br class="copyright-mobile-break"/> All Rights Reserved.
 		</div>
 		<div class="developer">
-			Site developed by: <a href="https://jstoobz.com" target="_blank">jstoobz</a>
+			Site developed by: <a href="http://jstoobz.com" target="_blank">jstoobz</a>
 		</div>
 		<div class="extras">
             <a href="/privacy-policy">Privacy Policy</a>

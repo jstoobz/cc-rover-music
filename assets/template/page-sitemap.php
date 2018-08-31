@@ -14,8 +14,8 @@ get_header();
 
             <div class="sitemap">
                 <h1><?php the_field('page_title') ?></h1>
-
-                <?php echo do_shortcode( '[wp_sitemap_page only="page"]' ); ?>
+                <h2>Pages</h2>
+                <?php echo do_shortcode( '[sitemap]' ); ?>
             </div>
 
         </main><!-- #main -->
